@@ -1,3 +1,35 @@
+// ===== WhatsApp Phone Formatting =====
+function formatWhatsApp(input) {
+    let value = input.value.replace(/\D/g, ''); // Remove non-digits
+
+    if (value.length > 11) {
+        value = value.substring(0, 11); // Limit to 11 digits
+    }
+
+    if (value.length > 0) {
+        // Format as (XX) XXXXX-XXXX
+        if (value.length <= 2) {
+            value = '(' + value;
+        } else if (value.length <= 7) {
+            value = '(' + value.substring(0, 2) + ') ' + value.substring(2);
+        } else {
+            value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7);
+        }
+    }
+
+    input.value = value;
+}
+
+// Initialize WhatsApp formatting when DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+    const whatsappInput = document.getElementById('whatsapp');
+    if (whatsappInput) {
+        whatsappInput.addEventListener('input', function () {
+            formatWhatsApp(this);
+        });
+    }
+});
+
 // ===== Counter Animation for Stats =====
 function animateCounter(counter) {
     const target = parseInt(counter.getAttribute('data-count') || '0', 10);
