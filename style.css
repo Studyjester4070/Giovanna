@@ -1679,3 +1679,68 @@ body {
     filter: grayscale(0%) invert(0%);
     /* Restore colors on hover */
 }
+
+/* ===== Notification System (Toast) ===== */
+.notification {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 18px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 1000;
+    animation: slideIn 0.4s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #D4AF37, #B8860B);
+    color: #0A0A0A;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notification button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+
+.notification button:hover {
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
