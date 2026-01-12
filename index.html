@@ -679,6 +679,41 @@
                         if (error) throw error;
 
                         console.log('✅ Lead saved:', data);
+
+                        // Send to n8n webhook for WhatsApp notification
+                        try {
+                            const n8nWebhookUrl = 'https://n8n.procexai.tech/webhook-test/c20fe22f-7d7f-47e5-b177-1cd502166ebc';
+
+                            const whatsappMessage = `🆕 Novo Lead!
+
+👤 Nome: ${name}
+📱 WhatsApp: ${whatsapp}
+💰 Investimento: ${investment}`;
+
+                            const webhookResponse = await fetch(n8nWebhookUrl, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    name: name,
+                                    whatsapp: whatsapp,
+                                    investment: investment,
+                                    message: whatsappMessage,
+                                    timestamp: new Date().toISOString()
+                                })
+                            });
+
+                            if (webhookResponse.ok) {
+                                console.log('✅ Webhook n8n enviado com sucesso');
+                            } else {
+                                console.warn('⚠️ Webhook n8n falhou:', webhookResponse.status);
+                            }
+                        } catch (webhookError) {
+                            // Não bloqueia o fluxo se o webhook falhar
+                            console.error('⚠️ Erro ao enviar webhook n8n:', webhookError);
+                        }
+
                         showNotification('Cadastro realizado com sucesso! Entraremos em contato.', 'success');
                         leadForm.reset();
 
