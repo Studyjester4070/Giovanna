@@ -1640,9 +1640,10 @@ body {
     }
 
     .grid-line span {
-        left: -45px !important;
-        width: 40px !important;
-        font-size: 0.65rem !important;
+        left: -60px !important;
+        /* Mais à esquerda para não ficar atrás do gráfico */
+        width: 50px !important;
+        font-size: 0.6rem !important;
         font-weight: 700 !important;
         text-align: right;
         display: flex;
@@ -1671,7 +1672,8 @@ body {
         position: absolute !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        bottom: 105% !important;
+        bottom: 102% !important;
+        /* Mais próximo da barra */
         white-space: nowrap !important;
         text-align: center !important;
         width: auto !important;
@@ -1714,6 +1716,12 @@ body {
         height: 180px !important;
     }
 
+    /* Linha amarela horizontal - centralizada */
+    .chart-x-axis {
+        width: 85% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
 
     section {
         overflow-x: hidden !important;
