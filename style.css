@@ -1608,16 +1608,14 @@ body {
 
     .chart-wrapper {
         padding: 80px 10px 40px 50px !important;
-        /* Reduced left padding */
         margin: 30px auto !important;
-        /* Centered, no left offset */
         width: 95% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
         height: auto !important;
         min-height: 200px !important;
-        overflow: hidden !important;
-        /* Contain everything */
+        overflow: visible !important;
+        /* Allow bars to be visible */
         background: rgba(255, 255, 255, 0.02);
         border-radius: 12px;
         border: 1px solid rgba(212, 175, 55, 0.1);
@@ -1689,12 +1687,17 @@ body {
 
     /* Override fixed desktop heights with proportional percentages for mobile */
     .bar-fill {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         background: var(--gold-gradient) !important;
         width: 100% !important;
         min-width: 20px !important;
         min-height: 10px !important;
         border-radius: 4px !important;
         flex-shrink: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
     }
 
     .chart-bar:nth-child(1) .bar-fill {
@@ -1722,10 +1725,6 @@ body {
         /* 100% of 120px */
     }
 
-    .chart-bar {
-        max-width: 14% !important;
-        flex: 1 !important;
-    }
 
     section {
         overflow-x: hidden !important;
