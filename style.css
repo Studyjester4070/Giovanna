@@ -1539,6 +1539,12 @@ body {
         --section-padding: 60px 0;
     }
 
+    /* Clip particles canvas to prevent horizontal overflow */
+    #particles-canvas {
+        opacity: 0.3 !important;
+        clip-path: inset(0) !important;
+    }
+
     /* FORCE HORIZONTAL COMPARISON BAR */
     .investment-comparison {
         padding: 0 10px;
@@ -1548,45 +1554,35 @@ body {
 
     .comparison-bar {
         flex-direction: row !important;
-        /* Force horizontal layout */
+        display: flex !important;
         height: auto !important;
         min-height: 60px !important;
         border-radius: 50px !important;
-        /* DO NOT STACK */
-        display: flex !important;
-        /* min-height: 60px !important; */
-        padding: 5px !important;
+        padding: 0 !important;
         width: 100% !important;
-        overflow: hidden;
+        overflow: hidden !important;
     }
 
     .investor-portion {
-        border-radius: 50px 0 0 50px !important;
+        flex: 0 0 30% !important;
+        width: 30% !important;
         padding: 15px 10px !important;
-        flex: 0 0 25% !important;
-        /* Fixed width for '20%' part */
-        /* flex: 0 0 35% !important; */
-        /* border-radius: 40px 0 0 40px !important; */
-    }
-
-    .investor-portion,
-    .tenant-portion {
-        padding: 10px 5px !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        flex: 1 !important;
-    }
-
-    .investor-portion {
-        flex: 0 0 35% !important;
-        border-radius: 40px 0 0 40px !important;
+        border-radius: 50px 0 0 50px !important;
     }
 
     .tenant-portion {
-        flex: 0 0 65% !important;
-        border-radius: 0 40px 40px 0 !important;
+        flex: 0 0 70% !important;
+        width: 70% !important;
+        padding: 15px 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 0 50px 50px 0 !important;
     }
 
     .investor-portion .percentage,
@@ -1611,19 +1607,20 @@ body {
     }
 
     .chart-wrapper {
-        padding: 120px 10px 40px 75px !important;
-        /* Massive top padding to accommodate bar labels */
-        margin: 40px 0 30px 12% !important;
-        width: 85% !important;
+        padding: 80px 10px 40px 50px !important;
+        /* Reduced left padding */
+        margin: 30px auto !important;
+        /* Centered, no left offset */
+        width: 95% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        height: 320px !important;
-        /* Total height to allow for large padding + chart */
-        overflow: visible !important;
+        height: auto !important;
+        min-height: 200px !important;
+        overflow: hidden !important;
+        /* Contain everything */
         background: rgba(255, 255, 255, 0.02);
         border-radius: 12px;
         border: 1px solid rgba(212, 175, 55, 0.1);
-        aspect-ratio: auto !important;
     }
 
     /* Robustly hide intermediate ticks on mobile to prevent congestion */
