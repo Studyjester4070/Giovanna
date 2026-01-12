@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Maximize seus ganhos através das estratégias mais sofisticadas do mercado e acelere seu crescimento financeiro.">
+    <title>CR Invest – Investimentos Imobiliários</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Logo Header -->
+        <div class="logo-header">
+            <img src="images/logo_final_v3.png" alt="Célia Rodrigues Invest" class="hero-logo">
+        </div>
+
+        <div class="hero-overlay"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gold-text">Alavanque seu patrimônio</span> no mercado imobiliário com as estratégias mais
+                sofisticadas.
+            </h1>
+            <p class="hero-subtitle">
+                Construa uma renda de aluguéis em 5 anos, com baixo investimento e sem entrada.
+            </p>
+            <a href="#form" class="cta-button">
+                <span>Agende sua consultoria</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Role para explorar</span>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <!-- Floating Icons - Scattered randomly in corners -->
+        <div class="floating-icon icon-1">🏠</div>
+        <div class="floating-icon icon-2">💰</div>
+        <div class="floating-icon icon-3">📈</div>
+        <div class="floating-icon icon-4">🔑</div>
+        <div class="floating-icon icon-5">🏢</div>
+        <div class="floating-icon icon-6">💎</div>
+        <div class="floating-icon icon-7">💵</div>
+        <div class="floating-icon icon-8">🏆</div>
+        <div class="floating-icon icon-9">✨</div>
+        <div class="floating-icon icon-10">📊</div>
+
+        <div class="container">
+            <h2 class="section-title">Como <span class="gold-text">Tudo Funciona?</span></h2>
+
+            <div class="investment-comparison">
+                <div class="comparison-bar">
+                    <div class="investor-portion">
+                        <span class="percentage">20%</span>
+                        <span class="label">Você investe</span>
+                    </div>
+                    <div class="tenant-portion">
+                        <span class="percentage">80%</span>
+                        <span class="label">O inquilino paga</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card" data-step="1">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" />
+                            <path d="M2 17L12 22L22 17" />
+                            <path d="M2 12L12 17L22 12" />
+                        </svg>
+                    </div>
+                    <h3>Compra com capital de terceiros</h3>
+                    <p>Utilize estratégias de alavancagem para adquirir imóveis com pouco capital próprio.</p>
+                </div>
+
+                <div class="step-card" data-step="2">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M12 1V23M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" />
+                        </svg>
+                    </div>
+                    <h3>Renda com aluguel</h3>
+                    <p>Gere renda passiva mensal através da locação estratégica do seu imóvel.</p>
+                </div>
+
+                <div class="step-card" data-step="3">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <path d="M2 10H22" />
+                        </svg>
+                    </div>
+                    <h3>Pagamento da Parcela</h3>
+                    <p>O aluguel recebido cobre as parcelas do financiamento, zerando seu custo.</p>
+                </div>
+
+                <div class="step-card" data-step="4">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999" />
+                            <path d="M22 4L12 14.01L9 11.01" />
+                        </svg>
+                    </div>
+                    <h3>Rentabilidade com segurança</h3>
+                    <p>Tenha retornos consistentes e previsíveis com total segurança jurídica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Chart Section -->
+    <section class="investment-chart">
+        <div class="container">
+            <h2 class="section-title">Acompanhe a <span class="gold-text">Rentabilidade</span></h2>
+            <p class="section-subtitle">Veja como seu patrimônio pode crescer de forma segura e eficiente ao longo do
+                tempo.</p>
+
+            <div class="chart-wrapper">
+                <!-- Y-axis grid lines -->
+                <div class="chart-grid">
+                    <div class="grid-line"><span>R$ 2M</span></div>
+                    <div class="grid-line"><span>R$ 1.5M</span></div>
+                    <div class="grid-line"><span>R$ 1M</span></div>
+                    <div class="grid-line"><span>R$ 500K</span></div>
+                    <div class="grid-line zero"><span>R$ 0</span></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-bar">
+                        <span class="bar-label">R$ 350K</span>
+                        <div class="bar-fill" style="--bar-height: 20%"></div>
+                        <span class="bar-year">Ano 1</span>
+                    </div>
+                    <div class="chart-bar">
+                        <span class="bar-label">R$ 612K</span>
+                        <div class="bar-fill" style="--bar-height: 35%"></div>
+                        <span class="bar-year">Ano 2</span>
+                    </div>
+                    <div class="chart-bar">
+                        <span class="bar-label">R$ 875K</span>
+                        <div class="bar-fill" style="--bar-height: 50%"></div>
+                        <span class="bar-year">Ano 3</span>
+                    </div>
+                    <div class="chart-bar">
+                        <span class="bar-label">R$ 1.22M</span>
+                        <div class="bar-fill" style="--bar-height: 70%"></div>
+                        <span class="bar-year">Ano 4</span>
+                    </div>
+                    <div class="chart-bar highlight">
+                        <span class="bar-label gold">R$ 1.75M</span>
+                        <div class="bar-fill" style="--bar-height: 100%"></div>
+                        <span class="bar-year">Ano 5</span>
+                    </div>
+                </div>
+                <!-- X-axis base line -->
+                <div class="chart-x-axis"></div>
+            </div>
+            <p class="chart-disclaimer">*Os valores acima representam a rentabilidade média dos últimos anos, isso não
+                se configura promessa de rendimentos futuros, os valores podem variar.</p>
+        </div>
+    </section>
+
+    <!-- Investment Plans Section -->
+    <section class="plans" id="plans">
+        <div class="container">
+            <h2 class="section-title">Escolha seu <span class="gold-text">Plano</span></h2>
+            <p class="section-subtitle">Estratégias personalizadas para cada perfil de investidor.</p>
+
+            <div class="plans-grid">
+                <!-- Starter Plan -->
+                <div class="plan-card">
+                    <div class="plan-badge">Popular</div>
+                    <h3 class="plan-name">Starter</h3>
+                    <p class="plan-description">Para quem está começando sua jornada no mercado imobiliário</p>
+
+                    <div class="plan-goal">
+                        <span class="goal-label">Alcance um patrimônio de:</span>
+                        <span class="goal-value">R$ 1.750.000<small>,00</small></span>
+                    </div>
+
+                    <div class="plan-investment">
+                        <span class="investment-label">Investimento mensal:</span>
+                        <span class="investment-value">R$ 2.090<small>,00</small></span>
+                    </div>
+
+                    <div class="plan-chart">
+                        <div class="mini-chart">
+                            <div class="mini-bar" style="height: 25%"></div>
+                            <div class="mini-bar" style="height: 40%"></div>
+                            <div class="mini-bar" style="height: 55%"></div>
+                            <div class="mini-bar" style="height: 75%"></div>
+                            <div class="mini-bar" style="height: 100%"></div>
+                        </div>
+                    </div>
+
+                    <a href="#form" class="plan-cta">Começar agora</a>
+                </div>
+
+                <!-- Investor Plan -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">Recomendado</div>
+                    <h3 class="plan-name">Investor</h3>
+                    <p class="plan-description">Para investidores que buscam crescimento acelerado</p>
+
+                    <div class="plan-goal">
+                        <span class="goal-label">Alcance um patrimônio de:</span>
+                        <span class="goal-value">R$ 3.000.000<small>,00</small></span>
+                    </div>
+
+                    <div class="plan-investment">
+                        <span class="investment-label">Investimento mensal:</span>
+                        <span class="investment-value">R$ 3.480<small>,00</small></span>
+                    </div>
+
+                    <div class="plan-chart">
+                        <div class="mini-chart">
+                            <div class="mini-bar" style="height: 20%"></div>
+                            <div class="mini-bar" style="height: 35%"></div>
+                            <div class="mini-bar" style="height: 55%"></div>
+                            <div class="mini-bar" style="height: 80%"></div>
+                            <div class="mini-bar" style="height: 100%"></div>
+                        </div>
+                    </div>
+
+                    <a href="#form" class="plan-cta">Começar agora</a>
+                </div>
+
+                <!-- Private Plan -->
+                <div class="plan-card">
+                    <div class="plan-badge">Premium</div>
+                    <h3 class="plan-name">Private</h3>
+                    <p class="plan-description">Para quem busca maximizar resultados com acompanhamento exclusivo</p>
+
+                    <div class="plan-goal">
+                        <span class="goal-label">Alcance um patrimônio de:</span>
+                        <span class="goal-value">R$ 4.000.000<small>,00</small></span>
+                    </div>
+
+                    <div class="plan-investment">
+                        <span class="investment-label">Investimento mensal:</span>
+                        <span class="investment-value">R$ 4.640<small>,00</small></span>
+                    </div>
+
+                    <div class="plan-chart">
+                        <div class="mini-chart">
+                            <div class="mini-bar" style="height: 15%"></div>
+                            <div class="mini-bar" style="height: 30%"></div>
+                            <div class="mini-bar" style="height: 50%"></div>
+                            <div class="mini-bar" style="height: 75%"></div>
+                            <div class="mini-bar" style="height: 100%"></div>
+                        </div>
+                    </div>
+
+                    <a href="#form" class="plan-cta">Começar agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Cuidamos de <span class="gold-text">Ponta a Ponta</span></h2>
+            <p class="section-subtitle">Todo o suporte que você precisa para construir seu patrimônio.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12L11 14L15 10" />
+                            <path
+                                d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" />
+                        </svg>
+                    </div>
+                    <h3>Aprovação do crédito</h3>
+                    <ul class="service-list">
+                        <li>Consórcio</li>
+                        <li>Financiamento</li>
+                        <li>Fundos de investimento</li>
+                        <li>Crédito para construção</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 21H21" />
+                            <path d="M5 21V7L12 3L19 7V21" />
+                            <path d="M9 21V15H15V21" />
+                        </svg>
+                    </div>
+                    <h3>Oportunidades imobiliárias</h3>
+                    <ul class="service-list">
+                        <li>Leilão de imóveis</li>
+                        <li>Compra na planta</li>
+                        <li>Imóveis abaixo do mercado</li>
+                        <li>Queima de estoque</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" />
+                            <path d="M2 17L12 22L22 17" />
+                            <path d="M2 12L12 17L22 12" />
+                        </svg>
+                    </div>
+                    <h3>Gestão de locação</h3>
+                    <ul class="service-list">
+                        <li>Gestão completa</li>
+                        <li>Locação por temporada</li>
+                        <li>Reforma para locação</li>
+                        <li>Máxima rentabilidade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <!-- Pulse Effect -->
+        <div class="pulse-center"></div>
+        <div class="pulse-container">
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring"></div>
+        </div>
+
+        <!-- Moldura com cantos arredondados -->
+        <div class="stats-frame">
+            <div class="frame-corner corner-tl"></div>
+            <div class="frame-corner corner-tr"></div>
+            <div class="frame-corner corner-bl"></div>
+            <div class="frame-corner corner-br"></div>
+        </div>
+
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-count="1564">0</span><span class="stat-plus">+</span>
+                    </div>
+                    <span class="stat-label">Pessoas alcançaram seus objetivos financeiros</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="91">0</span>
+                    <span class="stat-label">Cidades ao redor do mundo</span>
+                </div>
+            </div>
+            <a href="#form" class="cta-button large">
+                <span>Faça parte desse grupo</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-image-container">
+                <img src="images/team_selected.jpg" alt="Equipe Célia Rodrigues" class="team-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-content">
+                    <h2 class="form-title">Invista agora e <span class="gold-text">transforme seu futuro</span></h2>
+                    <p class="form-subtitle">Preencha o formulário e receba uma consultoria personalizada.</p>
+                </div>
+                <form class="lead-form" id="leadForm">
+                    <div class="form-group">
+                        <label for="name">Nome completo</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="investment">Capacidade de investimento</label>
+                        <select id="investment" name="investment" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="ate-2000">Até R$ 2.000/mês</option>
+                            <option value="2000-3500">R$ 2.000 a R$ 3.500/mês</option>
+                            <option value="3500-5000">R$ 3.500 a R$ 5.000/mês</option>
+                            <option value="acima-5000">Acima de R$ 5.000/mês</option>
+                        </select>
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Declaro que li e concordo com as <a href="legal.html" class="terms-link"
+                                target="_blank">Políticas de
+                                Privacidade e os Termos de Uso</a></label>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <span>Agendar consultoria</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">CR <span class="gold-text">Invest</span></span>
+                </div>
+                <div class="footer-legal">
+                    <p>Copyright © 2026. A CR Invest está inscrita no CNPJ sob o nº 41.285.485/0001-94 e
+                        exime-se de responsabilidade por danos sofridos por seus clientes, por força de falha de
+                        serviços disponibilizados por terceiros.</p>
+                    <p>A CR Invest está localizada no <span class="highlight-text">Boulevard Jacareí Office & Mall Sala
+                            1920 Rua Dr. Pompílio Mercadante, 398 – Centro Jacareí – SP</span>.</p>
+                    <div class="footer-map">
+                        <iframe
+                            src="https://maps.google.com/maps?q=Boulevard%20Jacare%C3%AD%20Office%20%26%20Mall%20Rua%20Dr.%20Pomp%C3%ADlio%20Mercadante%2C%20398%20%E2%80%93%20Centro%20Jacare%C3%AD%20%E2%80%93%20SP&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="legal.html" target="_blank">Termos de Uso</a>
+                    <span class="divider">|</span>
+                    <a href="legal.html" target="_blank">Políticas de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inline Stats Animation (bypasses file:// restrictions) -->
+    <script>
+        (function () {
+            function animateCounter(counter) {
+                var target = parseInt(counter.getAttribute('data-count') || '0', 10);
+                var duration = 2000;
+                var start = performance.now();
+
+                function update(now) {
+                    var elapsed = now - start;
+                    var progress = Math.min(elapsed / duration, 1);
+                    var ease = 1 - Math.pow(1 - progress, 4);
+                    var current = Math.floor(target * ease);
+
+                    counter.textContent = current.toLocaleString('pt-BR');
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.textContent = target.toLocaleString('pt-BR');
+                    }
+                }
+
+                requestAnimationFrame(update);
+            }
+
+            var statsObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        animateCounter(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '50px' });
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(function (el) {
+                    statsObserver.observe(el);
+                });
+            });
+        })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
