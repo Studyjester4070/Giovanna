@@ -527,17 +527,20 @@
                 if (value.length > 11) {
                     value = value.substring(0, 11);
                 }
+
+                // If empty, keep it empty (allow full deletion)
+                if (value.length === 0) {
+                    input.value = '';
+                    return;
+                }
+
                 var formatted = '';
-                if (value.length > 0) {
-                    formatted = '(' + value.substring(0, 2);
-                }
-                if (value.length >= 2) {
-                    formatted = '(' + value.substring(0, 2) + ')';
-                }
-                if (value.length > 2) {
-                    formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7);
-                }
-                if (value.length > 7) {
+                if (value.length <= 2) {
+                    // Just the DDD, no closing parenthesis yet
+                    formatted = '(' + value;
+                } else if (value.length <= 7) {
+                    formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2);
+                } else {
                     formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
                 }
                 input.value = formatted;
