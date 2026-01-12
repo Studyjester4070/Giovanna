@@ -1612,10 +1612,9 @@ body {
         width: 95% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        height: auto !important;
-        min-height: 200px !important;
+        height: 300px !important;
+        /* Fixed height for percentage calculations */
         overflow: visible !important;
-        /* Allow bars to be visible */
         background: rgba(255, 255, 255, 0.02);
         border-radius: 12px;
         border: 1px solid rgba(212, 175, 55, 0.1);
@@ -1629,19 +1628,19 @@ body {
 
     .chart-container {
         height: 200px !important;
-        /* Increased for taller bars */
+        /* Fixed height - critical for child percentage heights */
         width: 100% !important;
-        min-height: 200px !important;
         gap: 8px !important;
         overflow: visible !important;
         display: flex !important;
+        flex-direction: row !important;
         justify-content: space-between !important;
         align-items: flex-end !important;
+        position: relative !important;
     }
 
     .grid-line span {
         left: -45px !important;
-        /* Closer to chart */
         width: 40px !important;
         font-size: 0.65rem !important;
         font-weight: 700 !important;
@@ -1657,12 +1656,11 @@ body {
 
     .chart-bar {
         flex: 1 !important;
-        height: 100% !important;
-        /* Full height of container for reference */
+        height: 200px !important;
+        /* Full container height */
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-end !important;
-        /* Push content to bottom */
         align-items: center !important;
         max-width: 15% !important;
         position: relative !important;
@@ -1686,42 +1684,34 @@ body {
 
     .bar-fill {
         display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        background: linear-gradient(135deg, #D4AF37, #FFD54F, #B8860B) !important;
-        background: var(--gold-gradient) !important;
         width: 100% !important;
-        min-width: 30px !important;
-        min-height: 40px !important;
-        border-radius: 6px !important;
-        flex-shrink: 0 !important;
+        background: linear-gradient(to top, #B8860B, #D4AF37, #FFD54F) !important;
+        border-radius: 6px 6px 0 0 !important;
         position: relative !important;
-        z-index: 1 !important;
+        transition: none !important;
+        /* Remove transitions that can cause mobile render issues */
+        transform: none !important;
+        /* Remove transforms */
     }
 
     .chart-bar:nth-child(1) .bar-fill {
         height: 50px !important;
-        min-height: 50px !important;
     }
 
     .chart-bar:nth-child(2) .bar-fill {
         height: 80px !important;
-        min-height: 80px !important;
     }
 
     .chart-bar:nth-child(3) .bar-fill {
         height: 110px !important;
-        min-height: 110px !important;
     }
 
     .chart-bar:nth-child(4) .bar-fill {
         height: 140px !important;
-        min-height: 140px !important;
     }
 
     .chart-bar:nth-child(5) .bar-fill {
         height: 180px !important;
-        min-height: 180px !important;
     }
 
 
