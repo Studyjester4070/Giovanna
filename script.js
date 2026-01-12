@@ -1,34 +1,60 @@
 // ===== WhatsApp Phone Formatting =====
 function formatWhatsApp(input) {
-    let value = input.value.replace(/\D/g, ''); // Remove non-digits
+    // Remove all non-digit characters
+    let value = input.value.replace(/\D/g, '');
 
+    // Limit to 11 digits (Brazilian phone with DDD)
     if (value.length > 11) {
-        value = value.substring(0, 11); // Limit to 11 digits
+        value = value.substring(0, 11);
     }
 
+    // Format as (XX) XXXXX-XXXX
+    let formatted = '';
     if (value.length > 0) {
-        // Format as (XX) XXXXX-XXXX
-        if (value.length <= 2) {
-            value = '(' + value;
-        } else if (value.length <= 7) {
-            value = '(' + value.substring(0, 2) + ') ' + value.substring(2);
-        } else {
-            value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7);
-        }
+        formatted = '(' + value.substring(0, 2);
+    }
+    if (value.length >= 2) {
+        formatted = '(' + value.substring(0, 2) + ')';
+    }
+    if (value.length > 2) {
+        formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7);
+    }
+    if (value.length > 7) {
+        formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
     }
 
-    input.value = value;
+    input.value = formatted;
 }
 
 // Initialize WhatsApp formatting when DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
-    const whatsappInput = document.getElementById('whatsapp');
+    var whatsappInput = document.getElementById('whatsapp');
     if (whatsappInput) {
+        // Format on input
         whatsappInput.addEventListener('input', function () {
+            formatWhatsApp(this);
+        });
+
+        // Block non-numeric keys (except navigation keys)
+        whatsappInput.addEventListener('keypress', function (e) {
+            var char = String.fromCharCode(e.which || e.keyCode);
+            if (!/[0-9]/.test(char)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Handle paste - remove non-numeric characters
+        whatsappInput.addEventListener('paste', function (e) {
+            e.preventDefault();
+            var pastedText = (e.clipboardData || window.clipboardData).getData('text');
+            var numericOnly = pastedText.replace(/\D/g, '').substring(0, 11);
+            this.value = numericOnly;
             formatWhatsApp(this);
         });
     }
 });
+
 
 // ===== Counter Animation for Stats =====
 function animateCounter(counter) {
@@ -125,20 +151,7 @@ if (chartContainer) {
     chartObserver.observe(chartContainer);
 }
 
-// ===== WhatsApp Input Mask =====
-const whatsappInput = document.getElementById('whatsapp');
-if (whatsappInput) {
-    whatsappInput.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 11) value = value.slice(0, 11);
-        if (value.length > 0) {
-            if (value.length <= 2) value = `(${value}`;
-            else if (value.length <= 7) value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-            else value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
-        }
-        e.target.value = value;
-    });
-}
+// WhatsApp formatting is handled at the top of the file
 
 // ===== Supabase Integration =====
 const SUPABASE_URL = 'https://zinrqzsxvpqfoogohrwg.supabase.co';
