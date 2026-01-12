@@ -153,108 +153,8 @@ if (chartContainer) {
 
 // WhatsApp formatting is handled at the top of the file
 
-// ===== Supabase Integration =====
-const SUPABASE_URL = 'https://zinrqzsxvpqfoogohrwg.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppbnJxenN4dnBxZm9vZ29ocndnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzMDk1MDIsImV4cCI6MjA3NTg4NTUwMn0.0VDP-0ys8Y_VUhLXNCJCcSV1xAXV4c6pBvUq4mjPsRU';
-
-// Initialize Supabase Safely
-let supabase = null;
-try {
-    if (window.supabase) {
-        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-    } else {
-        console.warn('Supabase client library not found.');
-    }
-} catch (e) {
-    console.error('Error initializing Supabase:', e);
-}
-
-// ===== Form Submission =====
-const leadForm = document.getElementById('leadForm');
-if (leadForm) {
-    leadForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const whatsapp = document.getElementById('whatsapp').value;
-        const investment = document.getElementById('investment').value;
-        const terms = document.getElementById('terms').checked; // Still check for validity
-
-        if (!name || !whatsapp || !investment || !terms) {
-            showNotification('Por favor, preencha todos os campos.', 'error');
-            return;
-        }
-
-        const submitButton = this.querySelector('.submit-button');
-        const originalText = submitButton.innerHTML;
-
-        submitButton.innerHTML = `
-            <svg class="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;">
-                <circle cx="12" cy="12" r="10" stroke-opacity="0.3"/>
-                <path d="M12 2C6.48 2 2 6.48 2 12"/>
-            </svg>
-            <span>Enviando...</span>
-        `;
-        submitButton.disabled = true;
-
-        try {
-            if (!supabase) throw new Error('Supabase unavailable');
-
-            const { data, error } = await supabase
-                .schema('tefilho')
-                .from('leads')
-                .insert([{ name, whatsapp, investment }]); // Removed terms_accepted
-
-            if (error) throw error;
-
-            showNotification('Cadastro realizado com sucesso! Entraremos em contato.', 'success');
-            leadForm.reset();
-
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            showNotification('Erro ao enviar. Tente novamente.', 'error');
-        } finally {
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-        }
-    });
-}
-
-// ===== Notification System =====
-function showNotification(message, type = 'info') {
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) existingNotification.remove();
-
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <span>${message}</span>
-        <button onclick="this.parentElement.remove()">&times;</button>
-    `;
-
-    if (!document.querySelector('#notification-styles')) {
-        const styles = document.createElement('style');
-        styles.id = 'notification-styles';
-        styles.textContent = `
-            .notification { position: fixed; top: 30px; right: 30px; padding: 18px 24px; border-radius: 12px; display: flex; align-items: center; gap: 16px; z-index: 1000; animation: slideIn 0.4s ease; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-            .notification.success { background: linear-gradient(135deg, #D4AF37, #B8860B); color: #0A0A0A; }
-            .notification.error { background: linear-gradient(135deg, #dc3545, #c82333); color: white; }
-            .notification button { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: inherit; opacity: 0.7; transition: opacity 0.2s; }
-            .notification button:hover { opacity: 1; }
-            @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-            @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        `;
-        document.head.appendChild(styles);
-    }
-
-    document.body.appendChild(notification);
-    setTimeout(() => {
-        if (notification.parentElement) {
-            notification.style.animation = 'slideIn 0.3s ease reverse';
-            setTimeout(() => notification.remove(), 300);
-        }
-    }, 5000);
-}
+// Supabase and Form Submission are now handled inline in index.html
+// This prevents issues with file:// protocol and ensures script loading order
 
 // ===== Interactive Effects =====
 const hero = document.querySelector('.hero');
@@ -264,14 +164,14 @@ if (hero && heroGlow) {
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         if (scrolled < window.innerHeight) {
-            heroGlow.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.3}px))`;
+            heroGlow.style.transform = `translate(-50 %, calc(-50 % + ${scrolled * 0.3}px))`;
         }
     });
 
     hero.addEventListener('mousemove', (e) => {
         const rect = hero.getBoundingClientRect();
-        heroGlow.style.left = `${e.clientX - rect.left}px`;
-        heroGlow.style.top = `${e.clientY - rect.top}px`;
+        heroGlow.style.left = `${e.clientX - rect.left} px`;
+        heroGlow.style.top = `${e.clientY - rect.top} px`;
     });
 }
 
@@ -281,7 +181,7 @@ document.querySelectorAll('.plan-card').forEach(card => {
 
     // Stagger mini bars
     card.querySelectorAll('.mini-bar').forEach((bar, i) => {
-        bar.style.transitionDelay = `${i * 0.1}s`;
+        bar.style.transitionDelay = `${i * 0.1} s`;
     });
 });
 

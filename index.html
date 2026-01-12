@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="description"
-        content="Maximize seus ganhos através das estratégias mais sofisticadas do mercado e acelere seu crescimento financeiro.">
+        content="CR Invest - Investimentos Imobiliários de Alto Padrão. Transforme seu futuro financeiro com segurança e rentabilidade.">
     <title>CR Invest – Investimentos Imobiliários</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -609,6 +610,26 @@
                 if (leadForm.dataset.handled) return;
                 leadForm.dataset.handled = "true";
 
+                // Name Validation: Block numbers
+                const nameInput = document.getElementById('name');
+                if (nameInput) {
+                    nameInput.addEventListener('input', function () {
+                        this.value = this.value.replace(/[0-9]/g, '');
+                    });
+                    nameInput.addEventListener('keypress', function (e) {
+                        var char = String.fromCharCode(e.which || e.keyCode);
+                        if (/[0-9]/.test(char)) {
+                            e.preventDefault();
+                            return false;
+                        }
+                    });
+                    nameInput.addEventListener('paste', function (e) {
+                        e.preventDefault();
+                        var pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                        this.value = pastedText.replace(/[0-9]/g, '');
+                    });
+                }
+
                 // Initialize Supabase
                 let supabase = null;
                 if (window.supabase) {
@@ -644,8 +665,7 @@
                         if (!supabase) throw new Error('Conexão com banco de dados indisponível.');
 
                         const { data, error } = await supabase
-                            .schema('tefilho')
-                            .from('leads')
+                            .from('leads') // Defaults to 'public' schema which is always exposed
                             .insert([{ name, whatsapp, investment }]);
 
                         if (error) throw error;
