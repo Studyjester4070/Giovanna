@@ -665,7 +665,8 @@
                         if (!supabase) throw new Error('Conexão com banco de dados indisponível.');
 
                         const { data, error } = await supabase
-                            .from('leads') // Defaults to 'public' schema which is always exposed
+                            .schema('tefilho') // Now exposed and configured
+                            .from('leads')
                             .insert([{ name, whatsapp, investment }]);
 
                         if (error) throw error;
