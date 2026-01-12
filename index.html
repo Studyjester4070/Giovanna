@@ -603,6 +603,7 @@
 
             // Main Logic
             document.addEventListener('DOMContentLoaded', function () {
+                console.log('🚀 SCRIPT CARREGADO: V3 - VALIDACAO WHATSAPP ATIVA');
                 const leadForm = document.getElementById('leadForm');
                 if (!leadForm) return;
 
@@ -652,6 +653,12 @@
 
                     if (!name || !whatsapp || !investment || !terms) {
                         showNotification('Por favor, preencha todos os campos.', 'error');
+                        return;
+                    }
+
+                    const whatsappDigits = whatsapp.replace(/\D/g, '');
+                    if (whatsappDigits.length !== 11) {
+                        showNotification('O WhatsApp deve conter exatamente 11 números (DDD + 9 dígitos).', 'error');
                         return;
                     }
 
