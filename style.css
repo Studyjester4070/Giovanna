@@ -59,6 +59,13 @@ body {
     color: var(--white);
     line-height: 1.6;
     overflow-x: hidden;
+    /* Prevent horizontal scroll globally */
+}
+
+/* Safety for HTML overflow */
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Adjust scale for desktop to mimic 75% browser zoom */
@@ -137,8 +144,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: 800px;
+    width: min(800px, 150vw);
+    /* Scale down on mobile */
+    height: min(800px, 150vw);
     background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
     pointer-events: none;
     animation: pulse 4s ease-in-out infinite;
@@ -478,6 +486,8 @@ body {
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    overflow: hidden;
+    /* Added to keep content inside rounded borders on mobile */
 }
 
 /* Hover 3D */
@@ -1140,8 +1150,9 @@ body {
     }
 
     100% {
-        width: 700px;
-        height: 700px;
+        width: min(700px, 180vw);
+        /* Limit size on mobile to prevent overflow */
+        height: min(700px, 180vw);
         opacity: 0;
     }
 }
@@ -1520,6 +1531,18 @@ body {
     .investor-portion,
     .tenant-portion {
         padding: 25px;
+        border-radius: 0;
+        /* Reset border radius when stacked */
+    }
+
+    .investor-portion {
+        border-radius: 24px 24px 0 0;
+        /* Top rounded corners only */
+    }
+
+    .tenant-portion {
+        border-radius: 0 0 24px 24px;
+        /* Bottom rounded corners only */
     }
 
     .chart-container {
@@ -1542,17 +1565,58 @@ body {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+        /* Tighter padding on mobile */
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        /* Smaller titles */
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
     .cta-button {
         padding: 16px 28px;
         font-size: 1rem;
+        width: 100%;
+        /* Full width buttons on mobile */
+        justify-content: center;
     }
 
     .plan-card {
-        padding: 30px;
+        padding: 24px;
     }
 
     .service-card {
-        padding: 35px 25px;
+        padding: 30px 20px;
+    }
+
+    .lead-form {
+        padding: 24px 16px;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .stat-plus {
+        font-size: 2rem;
+    }
+
+    /* Hide background elements that disrupt reading on mobile cards */
+    .step-card::before {
+        font-size: 2rem;
+        top: 15px;
+        right: 15px;
+        opacity: 0.05;
     }
 }
 
