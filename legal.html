@@ -12,42 +12,41 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .legal-page {
-            padding: 120px 20px 60px;
+            padding: 180px 20px 60px;
             min-height: 100vh;
             background-color: var(--black-primary);
             color: var(--white);
         }
 
-        .legal-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--black-secondary);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
         .legal-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .legal-header a {
-            display: inline-block;
+            display: block;
+            height: 100px;
+            /* Small clickable height */
+            width: fit-content;
+            position: relative;
             line-height: 0;
             background: transparent !important;
         }
 
         .legal-logo {
-            height: 120px;
+            height: 250px;
+            /* Large visual size */
             width: auto;
-            margin-bottom: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: block;
-            transform: scale(2.2);
-            transform-origin: center bottom;
             background: transparent !important;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.15));
         }
 
         .legal-title {
