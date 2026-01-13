@@ -1868,18 +1868,21 @@ body {
 }
 
 .team-images-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    width: 100% !important;
 }
 
 .team-image-container {
-    flex: 1;
-    width: 48%;
-    max-width: 600px;
-    aspect-ratio: 1 / 1;
+    flex: 1 !important;
+    min-width: 0 !important;
+    width: 48% !important;
+    max-width: 600px !important;
+    aspect-ratio: 1 / 1 !important;
     border-radius: 24px;
     overflow: visible;
     position: relative;
