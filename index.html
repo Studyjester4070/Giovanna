@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="description"
-        content="CR Invest - Investimentos Imobiliários de Alto Padrão. Transforme seu futuro financeiro com segurança e rentabilidade.">
+        content="Maximize seus ganhos através das estratégias mais sofisticadas do mercado e acelere seu crescimento financeiro.">
     <title>CR Invest – Investimentos Imobiliários</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,7 @@
     <section class="hero" id="home">
         <!-- Logo Header -->
         <div class="logo-header">
-            <img src="images/logo_final_v3.png" alt="Célia Rodrigues Invest" class="hero-logo"
-                style="transform: scale(1.45) translateX(20px); transform-origin: center;">
+            <img src="images/logo_final_v3.png" alt="Célia Rodrigues Invest" class="hero-logo">
         </div>
 
         <div class="hero-overlay"></div>
@@ -149,43 +148,28 @@
                     <div class="grid-line zero"><span>R$ 0</span></div>
                 </div>
                 <div class="chart-container">
-                    <div class="chart-bar"
-                        style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center;">
-                        <span class="bar-label"
-                            style="position: static; margin-bottom: 5px; width: 100%; text-align: center;">R$
-                            350K</span>
+                    <div class="chart-bar">
+                        <span class="bar-label">R$ 350K</span>
                         <div class="bar-fill" style="--bar-height: 20%"></div>
                         <span class="bar-year">Ano 1</span>
                     </div>
-                    <div class="chart-bar"
-                        style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center;">
-                        <span class="bar-label"
-                            style="position: static; margin-bottom: 5px; width: 100%; text-align: center;">R$
-                            612K</span>
+                    <div class="chart-bar">
+                        <span class="bar-label">R$ 612K</span>
                         <div class="bar-fill" style="--bar-height: 35%"></div>
                         <span class="bar-year">Ano 2</span>
                     </div>
-                    <div class="chart-bar"
-                        style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center;">
-                        <span class="bar-label"
-                            style="position: static; margin-bottom: 5px; width: 100%; text-align: center;">R$
-                            875K</span>
+                    <div class="chart-bar">
+                        <span class="bar-label">R$ 875K</span>
                         <div class="bar-fill" style="--bar-height: 50%"></div>
                         <span class="bar-year">Ano 3</span>
                     </div>
-                    <div class="chart-bar"
-                        style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center;">
-                        <span class="bar-label"
-                            style="position: static; margin-bottom: 5px; width: 100%; text-align: center;">R$
-                            1.22M</span>
+                    <div class="chart-bar">
+                        <span class="bar-label">R$ 1.22M</span>
                         <div class="bar-fill" style="--bar-height: 70%"></div>
                         <span class="bar-year">Ano 4</span>
                     </div>
-                    <div class="chart-bar highlight"
-                        style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center;">
-                        <span class="bar-label gold"
-                            style="position: static; margin-bottom: 5px; width: 100%; text-align: center;">R$
-                            1.75M</span>
+                    <div class="chart-bar highlight">
+                        <span class="bar-label gold">R$ 1.75M</span>
                         <div class="bar-fill" style="--bar-height: 100%"></div>
                         <span class="bar-year">Ano 5</span>
                     </div>
@@ -401,14 +385,15 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team-section"
-        style="width: 100vw; max-width: none; padding: 0; margin: 0; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
-        <div class="container" style="width: 100%; max-width: none; padding: 0; margin: 0;">
-            <div class="team-image-container" style="display: flex; gap: 10px; justify-content: center; width: 100%;">
-                <img src="images/team_selected.jpg" alt="Equipe Célia Rodrigues" class="team-photo"
-                    style="width: 48vw !important; max-width: none !important; height: auto; object-fit: contain; border-radius: 8px;">
-                <img src="images/team_group_resized.png" alt="Equipe Célia Rodrigues Grupo" class="team-photo"
-                    style="width: 48vw !important; max-width: none !important; height: auto; object-fit: contain; border-radius: 8px;">
+    <section class="team-section">
+        <div class="container">
+            <div class="team-images-wrapper">
+                <div class="team-image-container">
+                    <img src="images/team_office.jpg" alt="Equipe Célia Rodrigues no escritório" class="team-photo">
+                </div>
+                <div class="team-image-container">
+                    <img src="images/team_event.jpg" alt="Equipe Célia Rodrigues em evento" class="team-photo">
+                </div>
             </div>
         </div>
     </section>
@@ -540,58 +525,6 @@
         })();
     </script>
 
-    <!-- WhatsApp Phone Formatting (inline to bypass file:// restrictions) -->
-    <script>
-        (function () {
-            function formatWhatsApp(input) {
-                var value = input.value.replace(/\D/g, '');
-                if (value.length > 11) {
-                    value = value.substring(0, 11);
-                }
-
-                // If empty, keep it empty (allow full deletion)
-                if (value.length === 0) {
-                    input.value = '';
-                    return;
-                }
-
-                var formatted = '';
-                if (value.length <= 2) {
-                    // Just the DDD, no closing parenthesis yet
-                    formatted = '(' + value;
-                } else if (value.length <= 7) {
-                    formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2);
-                } else {
-                    formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
-                }
-                input.value = formatted;
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                var whatsappInput = document.getElementById('whatsapp');
-                if (whatsappInput) {
-                    whatsappInput.addEventListener('input', function () {
-                        formatWhatsApp(this);
-                    });
-                    whatsappInput.addEventListener('keypress', function (e) {
-                        var char = String.fromCharCode(e.which || e.keyCode);
-                        if (!/[0-9]/.test(char)) {
-                            e.preventDefault();
-                            return false;
-                        }
-                    });
-                    whatsappInput.addEventListener('paste', function (e) {
-                        e.preventDefault();
-                        var pastedText = (e.clipboardData || window.clipboardData).getData('text');
-                        var numericOnly = pastedText.replace(/\D/g, '').substring(0, 11);
-                        this.value = numericOnly;
-                        formatWhatsApp(this);
-                    });
-                }
-            });
-        })();
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <!-- Robust Inline Form Handler -->
@@ -699,41 +632,6 @@
                         if (error) throw error;
 
                         console.log('✅ Lead saved:', data);
-
-                        // Send to n8n webhook for WhatsApp notification
-                        try {
-                            const n8nWebhookUrl = 'https://webh.procexai.tech/webhook/c20fe22f-7d7f-47e5-b177-1cd502166ebc';
-
-                            const whatsappMessage = `🆕 Novo Lead!
-
-👤 Nome: ${name}
-📱 WhatsApp: ${whatsapp}
-💰 Investimento: ${investment}`;
-
-                            const webhookResponse = await fetch(n8nWebhookUrl, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                },
-                                body: JSON.stringify({
-                                    name: name,
-                                    whatsapp: whatsapp,
-                                    investment: investment,
-                                    message: whatsappMessage,
-                                    timestamp: new Date().toISOString()
-                                })
-                            });
-
-                            if (webhookResponse.ok) {
-                                console.log('✅ Webhook n8n enviado com sucesso');
-                            } else {
-                                console.warn('⚠️ Webhook n8n falhou:', webhookResponse.status);
-                            }
-                        } catch (webhookError) {
-                            // Não bloqueia o fluxo se o webhook falhar
-                            console.error('⚠️ Erro ao enviar webhook n8n:', webhookError);
-                        }
-
                         showNotification('Cadastro realizado com sucesso! Entraremos em contato.', 'success');
                         leadForm.reset();
 
