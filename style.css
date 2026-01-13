@@ -1545,10 +1545,10 @@ body {
         clip-path: inset(0) !important;
     }
 
-    /* Aumentar logo em 40% */
+    /* Aumentar logo em 45% */
     .hero-logo,
     .logo-header img {
-        transform: scale(1.4) !important;
+        transform: scale(1.45) !important;
         transform-origin: center !important;
     }
 
