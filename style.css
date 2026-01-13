@@ -1647,9 +1647,11 @@ body {
     }
 
     /* Y-Axis labels - especificidade máxima para garantir aplicação */
+    /* Y-Axis labels - especificidade máxima */
     .chart-wrapper .chart-grid .grid-line span {
-        left: -65px !important;
-        width: 55px !important;
+        left: -40px !important;
+        /* Aligned with padding */
+        width: 40px !important;
         font-size: 0.58rem !important;
         font-weight: 700 !important;
         text-align: right !important;
@@ -1675,16 +1677,18 @@ body {
     }
 
     /* Bar value labels - mais próximas das barras */
+    /* Bar value labels - STATIC positioning to stack above fill */
     .chart-wrapper .chart-container .chart-bar .bar-label {
         font-size: clamp(0.5rem, 3vw, 0.7rem) !important;
-        position: absolute !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        bottom: 100% !important;
-        margin-bottom: 4px !important;
+        position: static !important;
+        /* Stack naturally above fill */
+        transform: none !important;
+        margin-bottom: 2px !important;
         white-space: nowrap !important;
         text-align: center !important;
-        width: auto !important;
+        width: 100% !important;
+        order: -1;
+        /* Ensure it sits above fill if needed (though HTML order handles it) */
     }
 
     .bar-year {
