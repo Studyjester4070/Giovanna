@@ -1545,6 +1545,13 @@ body {
         clip-path: inset(0) !important;
     }
 
+    /* Aumentar logo em 40% */
+    .hero-logo,
+    .logo-header img {
+        transform: scale(1.4) !important;
+        transform-origin: center !important;
+    }
+
     /* FORCE HORIZONTAL COMPARISON BAR */
     .investment-comparison {
         padding: 0 10px;
@@ -1639,18 +1646,18 @@ body {
         position: relative !important;
     }
 
-    .grid-line span {
-        left: -60px !important;
-        /* Mais à esquerda para não ficar atrás do gráfico */
-        width: 50px !important;
-        font-size: 0.6rem !important;
+    /* Y-Axis labels - especificidade máxima para garantir aplicação */
+    .chart-wrapper .chart-grid .grid-line span {
+        left: -65px !important;
+        width: 55px !important;
+        font-size: 0.58rem !important;
         font-weight: 700 !important;
-        text-align: right;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        height: 100%;
-        white-space: nowrap;
+        text-align: right !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        height: 100% !important;
+        white-space: nowrap !important;
         color: var(--gold-primary) !important;
         opacity: 1 !important;
     }
@@ -1667,13 +1674,14 @@ body {
         position: relative !important;
     }
 
-    .bar-label {
+    /* Bar value labels - mais próximas das barras */
+    .chart-wrapper .chart-container .chart-bar .bar-label {
         font-size: clamp(0.5rem, 3vw, 0.7rem) !important;
         position: absolute !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        bottom: 102% !important;
-        /* Mais próximo da barra */
+        bottom: 100% !important;
+        margin-bottom: 4px !important;
         white-space: nowrap !important;
         text-align: center !important;
         width: auto !important;
