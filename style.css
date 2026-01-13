@@ -1867,21 +1867,30 @@ body {
     z-index: 10;
 }
 
+.team-images-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .team-image-container {
-    width: 100%;
-    max-width: 640px;
-    /* Increased to ~130% of previous size (480 * 1.33) */
-    margin: 0 auto;
+    flex: 1;
+    max-width: 48%;
     border-radius: 24px;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .team-photo {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: contain;
+    border-radius: 24px;
+    background: var(--black-tertiary);
 }
 
 /* Removed hover effects */
@@ -1910,7 +1919,17 @@ body {
         padding: 40px 0;
     }
 
+    .team-images-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .team-image-container {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .team-photo {
         border-radius: 16px;
     }
 }
